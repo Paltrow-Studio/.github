@@ -1,0 +1,46 @@
+name: Random Cover
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'profile/covers/cover*.png'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  random-cover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pick random cover
+        run: |
+          cd profile/covers
+          COVERS=($(ls -1 cover*.png 2>/dev/null))
+          if [ ${#COVERS[@]} -eq 0 ]; then
+            echo "No cover images found"
+            exit 1
+          fi
+          SELECTED=${COVERS[$((RANDOM % ${#COVERS[@]}))]}
+          echo "Selected: $SELECTED"
+          cp "$SELECTED" current.png
+          echo "cover=$SELECTED" >> $GITHUB_OUTPUT
+
+      - name: Commit if changed
+        run: |
+          cd profile/covers
+          if git diff --quiet current.png; then
+            echo "No change, skipping commit"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add current.png
+            git commit -m "chore: update random cover [skip ci]"
+            git push
+          fi
