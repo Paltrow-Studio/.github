@@ -49,3 +49,9 @@
 - **僵尸村民皮肤替换**：7 种全新僵尸系实体皮肤
 - **帕秋莉手册**：游戏内伙伴物语指南
 - **TACZ 兼容**：与 Timeless and Classics Zero 枪械模组联动
+
+---
+
+<p align="center">
+  <sub>基于 <a href="https://github.com/slbidd/ShotaPartner">slbidd/ShotaPartner</a> 原项目</sub>
+</p>
