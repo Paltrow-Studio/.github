@@ -53,5 +53,9 @@
 ---
 
 <p align="center">
+  📊 <a href="https://shota-partner-progress.pages.dev/">项目进度看板</a>
+</p>
+
+<p align="center">
   <sub>基于 <a href="https://github.com/slbidd/ShotaPartner">slbidd/ShotaPartner</a> 原项目</sub>
 </p>
