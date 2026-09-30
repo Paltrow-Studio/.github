@@ -53,7 +53,7 @@
 ---
 
 <p align="center">
-  📊 <a href="[https://shota-partner-progress.pages.dev/](https://paltrow-studio.github.io/ShotaPartner-Docs/)">项目说明文档</a>
+  📊 <a href="https://paltrow-studio.github.io/ShotaPartner-Docs/">项目说明文档</a>
 </p>
 
 <p align="center">
